@@ -7,6 +7,30 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="gallery_contejner">No text and photo</div>
+    <div class="js-input_container">
+      <p class="name"><b class="name_input">Enter a foto name:</b> <br /></p>
+      <form class="search-form">
+        <div class="form-group">
+          <input
+            type="text"
+            class="input-control"
+            name="query"
+            id="searchQuery"
+            placeholder="Что ищем?"
+            autocomplete="off"
+            size="40"
+          />
+        </div>
+        <button type="submit" class="btn_submit">Search</button>
+      </form>
+    </div>
+    <ul class="js-gallery_container">
+      No text and photo
+    </ul>
+    <div class="button_container">
+      <button type="button" class="btn_primary" data-action="load_more">
+        Research
+      </button>
+    </div>
   </body>
 </html>
