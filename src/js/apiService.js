@@ -1,14 +1,39 @@
-const API_KEY = '22354412-39f12e0c13d349d19862b3301';
-const BASE_URL = 'https://pixabay.com/api/';
+export default class NesApiService {
+  constructor() {
+    this.searchQuery = '';
+    this.page = 1;
+  }
 
-function mainLineData() {
-  return fetch(
-    `${BASE_URL}?image_type=photo&orientation=horizontal&q=${searchQuery}&page=1&per_page=3&key=${API_KEY}`,
-  ).then(response => {
-    return response.json();
-  });
+  fetchArticles() {
+    console.log(this);
+    const API_KEY = '22354412-39f12e0c13d349d19862b3301';
+    const BASE_URL = 'https://pixabay.com/api/';
+
+    const url = fetch(
+      `${BASE_URL}?image_type=photo&orientation=horizontal&q=${this.searchQuery}&${this.page}&per_page=3&key=${API_KEY}`,
+    )
+      .then(r => r.json())
+      .then(data => {
+        this.page += 1;
+      });
+    // .then(data => {
+    //   const markup = photoCardTemplate(data);
+    //   refs.galleryContainer.innerHTML = markup;
+    // })
+
+    // .catch(error => {
+    //   console.log(error);
+    // });
+  }
+  get query() {
+    return this.searchQuery;
+  }
+  set query(newQuery) {
+    this.searchQuery = newQuery;
+  }
 }
-export default { mainLineData };
+
+// export default { mainLineData };
 
 // const BASE_URL = 'https://pixabay.com/api/';
 // function fetchCountries(countriesName) {
