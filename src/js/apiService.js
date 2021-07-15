@@ -17,14 +17,6 @@ export default class NesApiService {
 
         return data.hits;
       });
-    // .then(data => {
-    //   const markup = photoCardTemplate(data);
-    //   refs.galleryContainer.innerHTML = markup;
-    // })
-
-    // .catch(error => {
-    //   console.log(error);
-    // });
   }
   incrementPage() {
     this.page += 1;
