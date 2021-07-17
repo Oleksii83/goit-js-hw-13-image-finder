@@ -20,7 +20,19 @@ console.log('🚀 ~ file: index.js ~ line 17 ~ loadMoreBtn', loadMoreBtn);
 const newsAPI = new NewsAPI();
 
 refs.searchForm.addEventListener('submit', onSearch);
-loadMoreBtn.refs.button.addEventListener('click', fetchArticles);
+loadMoreBtn.refs.button.addEventListener(
+  'click',
+  fetchArticles,
+  handleButtonClick,
+);
+
+const btnLoadEnd = document.getElementById('.photo-card');
+function handleButtonClick() {
+  btnLoadEnd.scrollIntoView({
+    behavior: 'smooth',
+    block: 'end',
+  });
+}
 
 function onSearch(e) {
   e.preventDefault();

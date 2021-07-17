@@ -9,7 +9,7 @@ export default class NesApiService {
     const API_KEY = '22354412-39f12e0c13d349d19862b3301';
     const BASE_URL = 'https://pixabay.com/api/';
 
-    const url = `${BASE_URL}?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=3&key=${API_KEY}`;
+    const url = `${BASE_URL}?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${API_KEY}`;
     return fetch(url)
       .then(r => r.json())
       .then(data => {
